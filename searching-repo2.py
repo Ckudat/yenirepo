@@ -4,14 +4,12 @@ Created on Thu Jul  6 13:57:13 2023
 
 @author: monster
 """
-import base64
 from github import Github
-from pprint import pprint
 
 # Github username
-username = "ozkuran"
+username = "Ckudat"
 # pygithub object
-g = Github()
+g = Github(input("access token: "))
 # get that user by username
 user = g.get_user(username)
 def print_repo(repo):
@@ -36,11 +34,7 @@ def print_repo(repo):
     print("Contents:")
     for content in repo.get_contents(""):
         print(content)
-    try:
-        # repo license
-        print("License:", base64.b64decode(repo.get_license().content.encode()).decode())
-    except:
-        pass
+    
 # search by programming language
 for i, repo in enumerate(g.search_repositories("language:python")):
     print_repo(repo)

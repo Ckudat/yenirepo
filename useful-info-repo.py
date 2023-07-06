@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jul  6 11:47:25 2023
+Created on Thu Jul  6 16:34:32 2023
 
 @author: monster
 """
@@ -8,7 +8,7 @@ Created on Thu Jul  6 11:47:25 2023
 import base64
 from github import Github
 
-username = input("enter username: ")
+username = "Ckudat"
 # pygithub object
 g = Github()
 # get that user by username
@@ -35,11 +35,7 @@ def print_repo(repo):
     print("Contents:")
     for content in repo.get_contents(""):
         print(content)
-   
-for repo in user.get_repos():
-   print(repo)
-    # -*- coding: utf-8 -*-
-
+  
 for repo in user.get_repos():
     print_repo(repo)
     print("="*100)
